@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  nest:
+    build: .
+    container_name: nest
+    volumes:
+      - ./:/app:rw,cached
+      - /app/nest/node_modules
+    expose:
+      - 9229
+    ports:
+      - 3000:3000
+      - 9229:9229
+    command: yarn --cwd nest start:dev
+    working_dir: /app
+    
