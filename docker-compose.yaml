@@ -2,7 +2,8 @@ version: '3.5'
 
 services:
   nest:
-    build: .
+    build: 
+      context: ./nest
     container_name: nest
     volumes:
       - ./:/app:rw,cached
